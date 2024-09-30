@@ -12,7 +12,9 @@ program futbolito{
 	keyboard.left().onPressDo({lionel.retroceder()})
 	keyboard.right().onPressDo({lionel.avanzar()})
 
-	game.start()
+	//cambiar camiseta
+	keyboard.c().onPressDo({lionel.cambiarCamiseta()})
 
+	game.start()
 
 }
