@@ -16,6 +16,10 @@ object lionel {
 	method avanzar() {
 		position = game.at((game.width() - 1).min(position.x() + 1), position.y()) 
 	}
+
+	method irAInicio() {
+		position = game.at(0, 5)
+	}
 	
 }
 
