@@ -1,0 +1,21 @@
+import wollok.game.*
+import objetos.*
+
+describe "Tests Futbolito"{
+
+    method initialize(){
+
+    }
+
+    test "buscarla"{
+        lionel.position(game.at(3,5))
+        pelota.position(game.at(5,5))
+
+        lionel.buscar()
+
+        assert.equals(pelota.position(), lionel.position())
+
+    }
+
+
+}
