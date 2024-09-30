@@ -26,10 +26,32 @@ object lionel {
 		//al apretar la tecla *b* lionel se mueve a donde está la pelota
 		position = pelota.position()
 	}
+	method taquito() {
+		keyboard.t().onPressDo({self.patearTaquito()})
+	}
+	method patearTaquito() {
+		self.validarLionelYPelotaJuntos()
+		pelota.retroceder()
+	}
+
+	method validarLionelYPelotaJuntos() {
+		if (not self.hayColision()) {
+			self.error("Lionel no está con la pelota")
+		}
+	}
+
+	method hayColision() {
+      const colisiones = game.colliders(self)
+      return not(colisiones.isEmpty())
+    }
 }
 
 
 object pelota {
 	const property image="pelota.png"
 	var property position = game.at(5,5)	
+
+	method retroceder() {
+		position = game.at((position.x() - 2).max(0), position.y())
+	}
 }

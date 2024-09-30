@@ -2,10 +2,26 @@ import objetos.*
 import pgmProgram.*
 
 describe "futbolito" {
+    
     test "inicio" {
         const inicio = game.at(0,5)
         assert.notEquals(inicio, lionel.position())
         lionel.inicio()
         assert.equals(inicio, lionel.position())
+    }
+    test "patear" {
+        game.addVisual(lionel)
+	    game.addVisual(pelota)
+	    game.cellSize(40)
+	    game.width(15)
+	    game.height(10)
+
+
+        lionel.buscarla()
+
+        assert.that(lionel.hayColision())
+
+        lionel.taquito()
+        assert.equals(game.at(2,5), pelota.position())
     }
 }
