@@ -22,6 +22,8 @@ describe "futbolito" {
         assert.that(lionel.hayColision())
 
         lionel.patearTaquito()
+
         assert.equals(game.at(3,5), pelota.position())
+        assert.notThat(lionel.hayColision())
     }
 }
