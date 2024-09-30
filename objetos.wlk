@@ -16,7 +16,16 @@ object lionel {
 	method avanzar() {
 		position = game.at((game.width() - 1).min(position.x() + 1), position.y()) 
 	}
+
+	method inicio() {
+		//al apretar la tecla *i* la pelota se debe quedar en el origen borde izquierdo (0,5)
+		position = game.at(0, 5)
+	}
 	
+	method buscarla(){
+		//al apretar la tecla *b* lionel se mueve a donde está la pelota
+		position = pelota.position()
+	}
 }
 
 
