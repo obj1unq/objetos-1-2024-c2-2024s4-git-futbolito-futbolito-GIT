@@ -17,10 +17,32 @@ object lionel {
 		position = game.at((game.width() - 1).min(position.x() + 1), position.y()) 
 	}
 	
+	method patearPelota() {
+	  self.validarPosicionDePelota()
+	  pelota.patear()
+	}
+
+	method validarPosicionDePelota() {
+	  if (not self.estaEnLaPosicionDeLaPelota()){
+		self.error("No estas sobre la pelota!")
+	  }
+	}
+
+	method estaEnLaPosicionDeLaPelota() {
+	  return pelota.position() == self.position()
+	}
 }
 
 
 object pelota {
 	const property image="pelota.png"
 	var property position = game.at(5,5)	
+
+	method inicio() {
+	  game.at(0,5)
+	}
+
+	method patear() {
+	  position = game.at((game.width() - 1).min(position.x() + 3), position.y())
+	}
 }
