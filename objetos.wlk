@@ -26,6 +26,10 @@ object lionel {
 			self.error("no tengo la pelota")
 		}
 	}
+
+	method tengoLaPelota() {
+	  return position == pelota.position()
+	}
 }
 
 object pelota {
