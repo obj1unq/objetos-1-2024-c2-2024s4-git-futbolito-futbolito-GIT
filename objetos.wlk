@@ -1,4 +1,3 @@
-/** First Wollok example */
 import wollok.game.*
 
 object lionel {
@@ -50,10 +49,27 @@ object lionel {
 	}
 		
 	
-}
+	method taquito() {
+	  self.validarTaquito()
+	  pelota.serTaqueada()
+	}
 
+	method validarTaquito(){
+		if(not self.tengoLaPelota()){
+			self.error("no tengo la pelota")
+		}
+	}
+
+	method tengoLaPelota() {
+	  return position == pelota.position()
+	}
+}
 
 object pelota {
 	const property image="pelota.png"
-	var property position = game.at(5,5)	
+	var property position = game.at(5,5)
+
+	method serTaqueada() {
+	  position = game.at(0.max(position.x() - 2), position.y())
+	}	
 }
