@@ -12,10 +12,11 @@ program futbolito{
 	keyboard.left().onPressDo({lionel.retroceder()})
 	keyboard.right().onPressDo({lionel.avanzar()})
 	//Pizarron
-	keyboard.i().onPressDo({lionel.inicio()})
+	keyboard.i().onPressDo({pelota.inicio()})
 	keyboard.b().onPressDo({lionel.buscarla()})
 	keyboard.p().onPressDo({lionel.patear()})
-	
+	//Clase
+	keyboard.l().onPressDo({lionel.levantarla()})
 
 	game.start()
  
