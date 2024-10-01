@@ -1,0 +1,13 @@
+import objetos.*
+import wollok.game.*
+
+describe "futbolito" {
+  test "lionel tiene camiseta suplente" {
+
+    assert.notEquals("lionel-suplente",lionel.camisetaPuesta())
+    lionel.position(game.at(0,5))
+    lionel.camiseta()
+    assert.equals("lionel-suplente",lionel.camisetaPuesta())
+    
+  }
+}
